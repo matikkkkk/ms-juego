@@ -1,5 +1,7 @@
 package com.example.ms_juego.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,5 +20,9 @@ private JuegoService service;
 @GetMapping("/{id}")
 public Juego buscarPorId(@PathVariable int id){
     return service.findById(id);
+}
+@GetMapping
+public List<Juego> listarJuegos(){
+    return service.findAll();
 }
 }
